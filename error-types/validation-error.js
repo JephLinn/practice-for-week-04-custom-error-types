@@ -1,5 +1,5 @@
 class ValidationError extends Error {
-  constructor(message = "Invalid Input", ...params) {
+  constructor(message, ...params) {
     super(...params);
     
     if (Error.captureStackTrace) {
@@ -7,6 +7,7 @@ class ValidationError extends Error {
     };
 
     this.name = "ValidationError";
+    this.message = message || "Invalid input";
     
   };
 
